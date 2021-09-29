@@ -50,6 +50,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         
     }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        
+        let display = UIAlertController(title: "Hey there!", message: "You selected index \( indexPath.row )", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        display.addAction(okAction)
+        present(display, animated: true, completion: nil)
+        
+    }
 
 
 }
